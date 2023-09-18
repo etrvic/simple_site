@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programming Languages</title>
+    <style>
+        /* Modern Styling with Retro Colors */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center align content */
+        }
+
+        header {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .select-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .custom-select {
+            appearance: none;
+            padding: 20px; /* Increased padding for a larger box */
+            font-size: 18px; /* Increased font size for better readability */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            color: #333;
+            cursor: pointer;
+            padding-right: 30px; /* Adjusted padding for arrow */
+        }
+
+        .custom-select:focus {
+            outline: none;
+        }
+
+        .select-arrow {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none; /* Prevents arrow from interfering with selection */
+        }
+        .info {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Left align content */
+            font-size: 20px;
+            width: 800px;
+            margin: 10px auto;
+        }
+
+        #info-container {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Left align content */
+            font-size: 20px;
+            width: 800px;
+            margin: 10px auto;
+        }
+
+        /* Retro Color Palette */
+        .c {
+            background-color: #ffcc00;
+            color: #000;
+        }
+
+        .python {
+            background-color: #ff99cc;
+            color: #000;
+        }
+
+        .rust {
+            background-color: #996699;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Programming Languages</h1>
+        <p>a brief introduction</p>
+    </header>
+    <div class="info">
+    <p>Programming is the art and science of instructing computers to perform specific tasks and solve problems. It is a fundamental skill in our increasingly digital world, allowing humans to communicate with machines through a structured set of instructions. Programmers use various programming languages, like C, Python, or JavaScript, to write code that tells computers what to do. Programming is a creative and problem-solving endeavor, requiring logical thinking and attention to detail. It empowers us to develop software applications, websites, games, and automation tools that have transformed industries and shaped our daily lives. As technology continues to advance, programming remains a key driver of innovation and a vital skill for those who seek to harness the full potential of computing.</p>
+    </div>
+    <div class="select-container">
+        <select class="custom-select" id="language-select">
+            <option value="">Select a language</option>
+            <option value="c">C</option>
+            <option value="python">Python</option>
+            <option value="rust">Rust</option>
+        </select>
+        <div class="select-arrow">&#9660;</div>
+    </div>
+    
+    <div id="info-container">
+        <!-- Information about each programming language will be displayed here -->
+        Select a programming language to learn more.
+    </div>
+    
+    <script>
+        // JavaScript code to handle the selection and display information
+        const languageSelect = document.getElementById("language-select");
+        const infoContainer = document.getElementById("info-container");
+        
+        languageSelect.addEventListener("change", function() {
+            const selectedLanguage = languageSelect.value;
+            let infoText = "";
+            
+            switch(selectedLanguage) {
+                case "c":
+                    infoText = "C, often referred to as the mother of all languages, is a robust and influential programming language. It is celebrated for its efficiency and low-level control, making it a staple in system programming, embedded systems, and game development. C's performance-oriented design and direct memory manipulation capabilities make it a preferred choice for building high-performance software. While it requires a deep understanding of computer architecture, C remains indispensable for those seeking to create efficient and powerful applications that operate close to the hardware.";
+                    break;
+                case "python":
+                    infoText = "Python is a versatile programming language renowned for its simplicity and readability. It has gained immense popularity in various domains, including web development, data analysis, artificial intelligence, and automation. Python's elegant and easy-to-understand syntax makes it an ideal choice for both beginners and experienced developers. Its extensive standard library and a thriving community of developers contribute to its ever-expanding ecosystem of libraries and frameworks. Python's adaptability and wide range of applications have firmly established it as a go-to language for a multitude of programming tasks.";
+                    break;
+                case "rust":
+                    infoText = "Rust is a modern systems programming language that prioritizes both safety and performance. It was created to address the shortcomings of C and C++ by providing memory safety guarantees without sacrificing control over low-level details. Rust's ownership and borrowing system prevent common programming errors like null pointer dereferences and data races, making it an excellent choice for building secure and reliable software. Rust has gained popularity in areas such as operating systems, web development, and game development, thanks to its unique combination of safety and efficiency. Its growing ecosystem and passionate community make it an exciting language for tackling complex projects while minimizing the risk of bugs and vulnerabilities.";
+                    break;
+                default:
+                    infoText = "Select a programming language to learn more.";
+            }
+            
+            infoContainer.textContent = infoText;
+        });
+    </script>
+    <footer>
+        <p style="background-color: #ff6600; color: #fff; padding: 10px;">&copy; etrvic - 13 september 2023</p>
+        <p style="background-color: #ff6600; color: #fff; padding: 10px;">Thanks for visiting the page</p>
+    </footer>
+</body>
+</html>
